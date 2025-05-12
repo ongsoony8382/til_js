@@ -1,9 +1,41 @@
-// 커피를 출력하는 기능
-function 커피머신(_msg) {
-  console.log(_msg);
+/**
+ * 입력된 매개 변수 만큼 총합계산하기
+ * @param {number} numbers - 숫자 값
+ */
+function showTotal() {
+  console.log(arguments);
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total = total + arguments[i];
+  }
+  return total;
 }
 
-console.log("1. 안녕");
+const result = showTotal(4, 5, 6, 7, 8, 9, 1, 2, 0);
 
-console.log(이름표)
-var 이름표;
+function showTotal(...rest) {
+  console.log(arguments);
+  console.log(rest);
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total = total + arguments[i];
+  }
+  return total;
+}
+
+/**
+ * 입력된 매개 변수 만큼 총합계산하기
+ * Rest 파라메터 이용하기
+ * @param {...number} numbers - 숫자 값
+ */
+function showTotal(a, b, ...rest) {
+  console.log(a);
+  console.log(b);
+  console.log(rest);
+  let total = 0;
+  for (let i = 0; i < rest.length; i++) {
+    total = total + rest[i];
+  }
+  return total;
+}
+
